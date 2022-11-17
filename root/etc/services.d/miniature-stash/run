@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting Miniature-Stash"
+
+cd /app
+
+exec s6-setuidgid abc node bin/www -l 0.0.0.0

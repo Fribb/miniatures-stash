@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+echo "[cont-init.d] Setting permissions this may take some time"
+
+# delete existing user and recreate it with IDs from env variables
+deluser --remove-home abc
+addgroup -S abc -g ${PGID}
+adduser -S -G abc -u ${PUID} abc
+
+chown -R abc:abc /app

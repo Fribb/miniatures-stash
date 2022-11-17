@@ -15,14 +15,15 @@ WORKDIR /app
 COPY ./backend /app/.
 COPY --from=frontend-build /app/dist/frontend-angular /app/public
 
-RUN chown -R node:node /app
-
-USER node
-
 RUN npm install --production
 
 # Build image
-FROM alpine
+FROM lsiobase/alpine:3.16
+
+ENV PUID="1000"
+ENV PGID="1000"
+
+COPY root /
 
 WORKDIR /app
 
@@ -30,6 +31,4 @@ RUN apk add --no-cache nodejs
 
 COPY --from=server-build /app ./
 
-EXPOSE 3000
-
-CMD ["node", "bin/www"]
+ENTRYPOINT ["/init"]
