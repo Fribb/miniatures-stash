@@ -33,3 +33,6 @@ coverage
 
 # Benchmarking
 benchmarks/graphs
+
+# mochawesome report
+reports
