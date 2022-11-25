@@ -11,6 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('karma-htmlfile-reporter'),
+      require('karma-sonarqube-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -29,7 +30,9 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, 'reports'),
       subdir: '.',
       reporters: [
-        { type: 'cobertura' }
+        { type: 'text-summary' },
+        { type: 'cobertura' },
+        { type: 'lcovonly' }
       ]
     },
     htmlReporter: {
@@ -41,7 +44,18 @@ module.exports = function (config) {
       useLegacyStyle: true,
       showOnlyFailed: false
     },
-    reporters: ['progress', 'html'],
+    sonarqubeReporter: {
+      basePath: '.',
+      filePattern: '**/*.spec.ts',
+      encoding: 'utf-8',
+      outputFolder: 'reports',
+      legacyMode: false,
+      reportName: "sonarqube.xml"
+    },
+    preprocessors: {
+      'src/**/*.spec.ts': ['coverage']
+    },
+    reporters: ['progress', 'html', 'sonarqube'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

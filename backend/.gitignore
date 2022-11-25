@@ -36,3 +36,5 @@ benchmarks/graphs
 
 # mochawesome report
 reports
+
+/.nyc_output/
