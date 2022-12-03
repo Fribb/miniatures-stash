@@ -4,7 +4,7 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular', "viewport"],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
@@ -12,6 +12,7 @@ module.exports = function (config) {
       require('karma-coverage'),
       require('karma-htmlfile-reporter'),
       require('karma-sonarqube-reporter'),
+      require('karma-viewport'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -62,6 +63,31 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['ChromeHeadless'],
     singleRun: true,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    viewport: {
+      breakpoints: [
+        {
+          name: "mobile",
+          size: {
+            width: 320,
+            height: 480
+          }
+        },
+        {
+          name: "table",
+          size: {
+            width: 768,
+            height: 1024
+          }
+        },
+        {
+          name: 'desktop',
+          size: {
+            width: 1184,
+            height: 900,
+          },
+        }
+      ]
+    }
   });
 };

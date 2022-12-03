@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MiniaturesComponent } from './content/miniatures/miniatures.component';
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatIconModule } from "@angular/material/icon";
-import { MatListModule } from "@angular/material/list";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {MiniaturesComponent} from './content/miniatures/miniatures.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { CreatorsComponent } from './content/creators/creators.component';
 
 
 @NgModule({
@@ -19,17 +24,22 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MiniaturesComponent
+    MiniaturesComponent,
+    CreatorsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
 
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    BrowserAnimationsModule
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
