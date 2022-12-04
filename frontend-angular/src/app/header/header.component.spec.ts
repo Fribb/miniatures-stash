@@ -50,6 +50,7 @@ describe('HeaderComponent', () => {
 
   it('should render title', () => {
     const compiled = fixture.nativeElement as HTMLElement;
+
     expect(compiled.querySelector('a')?.textContent).toContain('Miniatures-Stash');
   });
 
