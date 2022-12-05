@@ -17,6 +17,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { CreatorsComponent } from './content/creators/creators.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CreatorsComponent } from './content/creators/creators.component';
     MatIconModule,
     MatListModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
