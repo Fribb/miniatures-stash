@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+.creatorImageRow {
+  width: 8%;
+}
+
+.creatorImage {
+  width: 50px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.buttonColumn {
+  width: 5%;
+}
+
+#add-creator-icon {
+  font-size: 35px;
+}

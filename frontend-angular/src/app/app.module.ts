@@ -16,8 +16,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import { CreatorsComponent } from './content/creators/creators.component';
+import {CreatorsComponent} from './content/creators/creators.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatTableModule} from "@angular/material/table";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import {MatCardModule} from "@angular/material/card";
     MatListModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
