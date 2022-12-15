@@ -52,6 +52,11 @@ pipeline {
         stage('backend tests') {
             steps {
                 dir('./backend') {
+                    // create .env file
+                    writeFile file: '.env', text: '''NODE_ENV=test
+                        FRONTEND=http://localhost:4200'''
+
+                    // run test
                     nodejs('NodeJS 18.12.1') {
                         sh "npm test"
                     }
