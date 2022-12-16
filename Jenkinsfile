@@ -8,6 +8,10 @@ pipeline {
     options {
         // This is required if you want to clean before build
         skipDefaultCheckout(true)
+        // disable simultaneous builds
+        disableConcurrentBuilds()
+        // keep 10 build but only 1 artifact history
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '30', numToKeepStr: '10')
     }
 
     stages {
